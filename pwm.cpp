@@ -21,10 +21,3 @@ int PWM::start_pwm(int channel, int frequency, float duty_cycle, int chip)
     enable();
     return r;
 }
-
-int PWM::setDutyCycle(float v) const
-{
-    const int dc = (int)round((float)per * (v / 100.0));
-    const int r = setDutyCycleNS(dc);
-    return r;
-}

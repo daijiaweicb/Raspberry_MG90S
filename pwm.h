@@ -13,8 +13,8 @@ using namespace std;
 
 /**
  * @brief PWM control class, based on the sysfs interface to control the PWM output on the Raspberry Pi.
- * 
- * This class encapsulates writing to /sys/class/pwm/pwmchipX/pwmY, 
+ *
+ * This class encapsulates writing to /sys/class/pwm/pwmchipX/pwmY,
  * including setting period, duty cycle, and enabling/disabling output.
  */
 class PWM
@@ -22,7 +22,7 @@ class PWM
 public:
     /**
      * @brief Start the PWM output
-     * 
+     *
      * @param channel PWM channel (e.g., 2 for pwm2)
      * @param frequency Frequency in Hz (e.g., 50Hz for servo motors)
      * @param duty_cycle Duty cycle in percentage (0.0 ~ 100.0)
@@ -33,11 +33,16 @@ public:
 
     /**
      * @brief Set duty cycle by percentage
-     * 
+     *
      * @param v Duty cycle percentage (e.g., 7.5)
      * @return int Result code
      */
-    inline int setDutyCycle(float v) const;
+    inline int setDutyCycle(float v) const
+    {
+        const int dc = (int)round((float)per * (v / 100.0));
+        const int r = setDutyCycleNS(dc);
+        return r;
+    }
 
     ~PWM()
     {
@@ -45,9 +50,9 @@ public:
     }
 
 private:
-    string chippath;   // Path to pwmchip (e.g., /sys/class/pwm/pwmchip2)
-    string pwmpath;    // Path to specific pwm channel (e.g., /pwm2)
-    int per = 0;       // Period in nanoseconds
+    string chippath; // Path to pwmchip (e.g., /sys/class/pwm/pwmchip2)
+    string pwmpath;  // Path to specific pwm channel (e.g., /pwm2)
+    int per = 0;     // Period in nanoseconds
 
     /**
      * @brief Write an integer value to a sysfs file
