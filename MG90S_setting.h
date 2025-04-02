@@ -8,12 +8,13 @@ class MG90S
     public:
     void start_mg90s()
     {
-        pwm.start_pwm(channel,frequency,15, chip);
+        pwm.start_pwm(channel,frequency,7.5, chip);
     }
 
     void setAngle(int angle)
     {
         int duty_ns = angleToDutyNs(angle);
+
         pwm.setDutyCycle(duty_ns);
     }
 

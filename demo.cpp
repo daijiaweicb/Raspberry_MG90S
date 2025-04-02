@@ -8,16 +8,17 @@ int main(int argc, char *argv[])
 {
     MG90S mg90s;
     mg90s.start_mg90s();
+    PWM pwm;
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "1" << endl;
-    mg90s.setAngle(0);
+    pwm.setDutyCycle(0);
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "2"<< endl;
-    mg90s.setAngle(90);
+    pwm.setDutyCycle(7.5);
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "3" << endl;
 
-    mg90s.setAngle(180);
+    pwm.setDutyCycle(15);
     std::this_thread::sleep_for(std::chrono::seconds(2));
 
     cout << "Motor move fixed" << endl;
