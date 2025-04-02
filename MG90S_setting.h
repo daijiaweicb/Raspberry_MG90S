@@ -26,7 +26,7 @@ class MG90S
 
     int angleToDutyNs(int angle)
     {
-        return 500000 + angle * (200000/180);
+        return 500000 + angle * (2000000/180);
     }
 };
 
