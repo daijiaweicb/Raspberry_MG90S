@@ -14,7 +14,7 @@ class MG90S
     void setAngle(int angle)
     {
         int duty_ns = angleToDutyNs(angle);
-        pwm.setDutyCycle(duty_ns);
+        pwm.setDutyCycleNS(duty_ns);
     }
 
     private:
