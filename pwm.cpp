@@ -2,7 +2,7 @@
 
 int PWM::start_pwm(int channel, int frequency, float duty_cycle, int chip)
 {
-    chippath = "sys/class/pwm/pwmchip" + to_string(chip);
+    chippath = "/sys/class/pwm/pwmchip" + to_string(chip);
     pwmpath = chippath + "/pwm" + to_string(channel);
     string p = chippath + "/export";
     FILE *const fp = fopen(p.c_str(), "w");
