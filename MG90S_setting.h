@@ -6,6 +6,7 @@
 class MG90S
 {
     public:
+    PWM pwm;
     void start_mg90s()
     {
         pwm.start_pwm(channel,frequency,7.5, chip);
@@ -19,7 +20,7 @@ class MG90S
     }
 
     private:
-    PWM pwm;
+    
     
     const int channel = 2;
     const int frequency = 50;
