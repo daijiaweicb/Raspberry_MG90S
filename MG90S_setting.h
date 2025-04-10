@@ -24,7 +24,7 @@ class MG90S
     
     const int channel = 3;
     const int frequency = 50;
-    const int chip = 2;
+    const int chip = 0;
 
     int angleToDutyNs(int angle)
     {
