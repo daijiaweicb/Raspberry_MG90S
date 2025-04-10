@@ -22,9 +22,9 @@ class MG90S
     private:
     PWM pwm;
     
-    const int channel = 1;
+    const int channel = 2;
     const int frequency = 50;
-    const int chip = 0;
+    const int chip = 2;
 
     int angleToDutyNs(int angle)
     {
