@@ -92,6 +92,7 @@ private:
     void enable() const
     {
         writeSYS(pwmpath + "/enable", 1);
+        cout << "[DEBUG] enable() write to " << pwmpath + "/enable" << " result = " << r << endl;
     }
 
     /**
