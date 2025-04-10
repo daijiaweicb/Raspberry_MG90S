@@ -44,6 +44,15 @@ public:
         return r;
     }
 
+    /**
+     * @brief Set duty cycle in nanoseconds
+     */
+    inline int setDutyCycleNS(int ns) const
+    {
+        const int r = writeSYS(pwmpath + "/duty_cycle", ns);
+        return r;
+    }
+
     ~PWM()
     {
         disable(); // Disable PWM on object destruction
@@ -77,14 +86,7 @@ private:
         writeSYS(pwmpath + "/period", ns);
     }
 
-    /**
-     * @brief Set duty cycle in nanoseconds
-     */
-    inline int setDutyCycleNS(int ns) const
-    {
-        const int r = writeSYS(pwmpath + "/duty_cycle", ns);
-        return r;
-    }
+    
 
     /**
      * @brief Enable PWM output
