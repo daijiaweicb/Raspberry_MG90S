@@ -24,6 +24,14 @@ class MG90S
 
     int angleToDutyNs(int angle)
     {
+        if(angle < 0)
+        {
+            angle = 0;
+        }
+        else if(angle > 180)
+        {
+            angle = 180;
+        }
         return 500000 + angle * (2000000/180);
     }
 };
