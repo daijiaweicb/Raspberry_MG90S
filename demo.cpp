@@ -9,8 +9,8 @@ int main() {
     pwm.start_pwm(2, 50, 7.5, 2); // chip=2, channel=2
     std::this_thread::sleep_for(std::chrono::seconds(2));
 
-    pwm.setDutyCycle(1);
+    pwm.setDutyCycle(5);
     std::this_thread::sleep_for(std::chrono::seconds(2));
-    pwm.setDutyCycle(15);
+    pwm.setDutyCycle(10);
     std::this_thread::sleep_for(std::chrono::seconds(2));
 }
