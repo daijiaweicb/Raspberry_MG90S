@@ -29,7 +29,7 @@ public:
      * @param chip PWM chip number (usually 0 or 2)
      * @return int 0 if success, <0 if failed
      */
-    int start_pwm(int channel, int frequency, float duty_cycle, int chip = 0);
+    int start_pwm(int channel, int frequency, float duty_cycle, int chip = 2);
 
     /**
      * @brief Set duty cycle by percentage
