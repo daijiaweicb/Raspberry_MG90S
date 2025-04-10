@@ -22,7 +22,7 @@ class MG90S
     private:
     PWM pwm;
     
-    const int channel = 3;
+    const int channel = 1;
     const int frequency = 50;
     const int chip = 0;
 
