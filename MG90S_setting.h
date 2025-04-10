@@ -9,7 +9,7 @@ class MG90S
     
     void start_mg90s()
     {
-        pwm.start_pwm(2,50,0, 2);
+        pwm.start_pwm(2,50,7.5,2);
     }
 
     void setAngle(int angle)

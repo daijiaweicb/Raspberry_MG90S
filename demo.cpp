@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     MG90S mg90s;
     mg90s.start_mg90s();
-    mg90s.setAngle(90);
+    // mg90s.setAngle(90);
     cout << "reset" << endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
     cout << "1" << endl;
